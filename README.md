@@ -16,24 +16,26 @@ uv run mssql-mcp-server
 
 ```json
 {
-  "mssql-mcp-server": {
-    "command": "uv",
-    "args": [
-      "--directory",
-      "H:/workspaces/leopeng1995/mssql-mcp-server",
-      "run",
-      "mssql-mcp-server"
-    ],
-    "env": {
-      "MSSQL_SERVER": "localhost",
-      "MSSQL_PORT": "1433",
-      "MSSQL_USER": "username",
-      "MSSQL_PASSWORD": "password",
-      "MSSQL_DATABASE": "database",
-      "MSSQL_CHARSET": "UTF-8" # or CP936 ...
-    },
-    "disabled": false,
-    "autoApprove": []
+  "mcpServers": {
+    "mssql-mcp-server": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "H:/workspaces/leopeng1995/mssql-mcp-server",
+        "run",
+        "mssql-mcp-server"
+      ],
+      "env": {
+        "MSSQL_SERVER": "localhost",
+        "MSSQL_PORT": "1433",
+        "MSSQL_USER": "username",
+        "MSSQL_PASSWORD": "password",
+        "MSSQL_DATABASE": "database",
+        "MSSQL_CHARSET": "UTF-8" # or CP936 ...
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
   }
 }
 ```
