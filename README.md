@@ -1,9 +1,19 @@
 # mssql-mcp-server
 
+[![smithery badge](https://smithery.ai/badge/@leopeng1995/mssql-mcp-server)](https://smithery.ai/server/@leopeng1995/mssql-mcp-server)
 mssql-mcp-server is a Model Context Protocol (MCP) server for connecting to Microsoft SQL Server.
 
 ## Installation
 
+### Installing via Smithery
+
+To install Microsoft SQL Server MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@leopeng1995/mssql-mcp-server):
+
+```bash
+npx -y @smithery/cli install @leopeng1995/mssql-mcp-server --client claude
+```
+
+### Manual Installation
 ```
 git clone https://github.com/leopeng1995/mssql-mcp-server.git
 cd mssql-mcp-server
