@@ -1,0 +1,44 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'mssql-mcp-server', args: [], env: { MSSQL_SERVER: config.host, MSSQL_PORT: config.port.toString(), MSSQL_USER: config.user, MSSQL_PASSWORD: config.password, MSSQL_DATABASE: config.database, MSSQL_CHARSET: config.charset } })
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - user
+      - password
+      - database
+    properties:
+      host:
+        type: string
+        default: localhost
+        description: MSSQL server host
+      port:
+        type: number
+        default: 1433
+        description: MSSQL server port
+      user:
+        type: string
+        description: MSSQL user
+      password:
+        type: string
+        description: MSSQL password
+      database:
+        type: string
+        description: MSSQL database
+      charset:
+        type: string
+        default: UTF-8
+        description: MSSQL charset
+  exampleConfig:
+    host: localhost
+    port: 1433
+    user: sa
+    password: YourStrong!Pass
+    database: TestDB
+    charset: UTF-8
